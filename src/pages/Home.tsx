@@ -2,7 +2,7 @@ import { VideoCard } from "../components/VideoCard";
 import { videos } from "../data/videos";
 
 const Home = () => {
-  const categories = Array.from(new Set(videos.map(video => video.category)));
+  const featuredCategories = ["HeadCam Reels", "Anime Edits", "Popular Edits"];
   
   return (
     <div className="pt-16">
@@ -17,13 +17,13 @@ const Home = () => {
       </section>
 
       <section className="py-20 container mx-auto px-4">
-        {categories.map(category => {
+        {featuredCategories.map(category => {
           const categoryVideos = videos.filter(video => video.category === category).slice(0, 3);
           
           return (
             <div key={category} className="mb-16">
               <h2 className="text-3xl font-semibold mb-8">{category}</h2>
-              <div className="video-grid">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {categoryVideos.map((video) => (
                   <VideoCard
                     key={video.id}
