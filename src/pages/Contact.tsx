@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { personalInfo } from "../data/videos";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,12 +30,16 @@ const Contact = () => {
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-primary font-semibold">Email</h3>
-                <p className="text-foreground/80">contact@example.com</p>
+                <h3 className="text-primary font-semibold">Name</h3>
+                <p className="text-foreground/80">{personalInfo.name}</p>
               </div>
               <div>
-                <h3 className="text-primary font-semibold">Location</h3>
-                <p className="text-foreground/80">Los Angeles, CA</p>
+                <h3 className="text-primary font-semibold">Email</h3>
+                <p className="text-foreground/80">{personalInfo.email}</p>
+              </div>
+              <div>
+                <h3 className="text-primary font-semibold">Phone</h3>
+                <p className="text-foreground/80">{personalInfo.phone}</p>
               </div>
             </div>
           </div>
