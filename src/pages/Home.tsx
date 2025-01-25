@@ -1,5 +1,52 @@
 import { VideoCard } from "../components/VideoCard";
 import { videos } from "../data/videos";
+import { Star, Sparkles } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const reviews = [
+  {
+    name: "Alex Thompson",
+    role: "Content Creator",
+    review: "Incredible editing skills! The transitions are seamless.",
+    rating: 5
+  },
+  {
+    name: "Sarah Chen",
+    role: "YouTuber",
+    review: "Best editor I've worked with. Fast and professional!",
+    rating: 5
+  },
+  {
+    name: "Mike Rodriguez",
+    role: "Twitch Streamer",
+    review: "Amazing work on my stream highlights!",
+    rating: 5
+  }
+];
+
+const faqs = [
+  {
+    question: "What types of videos do you edit?",
+    answer: "I specialize in various types of video editing including anime edits, popular edits, intros, logo animations, headcam reels, and long-form content."
+  },
+  {
+    question: "What is your turnaround time?",
+    answer: "Turnaround time varies depending on the project complexity. Short-form content typically takes 1-3 days, while long-form content may take 3-7 days."
+  },
+  {
+    question: "Do you offer revisions?",
+    answer: "Yes, I offer up to 2 rounds of revisions to ensure you're completely satisfied with the final product."
+  },
+  {
+    question: "How do I get started?",
+    answer: "Simply reach out through the contact form or email me at syed4abdurrehman@gmail.com to discuss your project needs."
+  }
+];
 
 const Home = () => {
   const featuredCategories = ["HeadCam Reels", "Anime Edits", "Popular Edits"];
@@ -37,6 +84,59 @@ const Home = () => {
             </div>
           );
         })}
+      </section>
+
+      {/* Reviews Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
+          <Star className="text-primary" />
+          Client Reviews
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <div 
+              key={index}
+              className="p-6 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 shadow-lg shadow-primary/10 hover:shadow-primary/20"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4">{review.review}</p>
+              <div>
+                <p className="font-medium">{review.name}</p>
+                <p className="text-sm text-primary">{review.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
+          <Sparkles className="text-primary" />
+          Frequently Asked Questions
+        </h2>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-white/5 rounded-lg px-6 shadow-lg shadow-primary/10"
+              >
+                <AccordionTrigger className="text-lg font-medium hover:text-primary transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </section>
     </div>
   );
