@@ -30,6 +30,7 @@ const Home = () => {
                     title={video.title}
                     thumbnail={video.thumbnail}
                     category={video.category}
+                    url={video.url}
                   />
                 ))}
               </div>
