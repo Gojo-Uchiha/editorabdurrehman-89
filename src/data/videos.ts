@@ -65,6 +65,13 @@ export const videos: Video[] = [
     url: "https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview",
     thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview")
   },
+  {
+    id: "21",
+    title: "Popular Edit 3",
+    category: "Popular Edits",
+    url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
+    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view")
+  },
 
   // Intros
   {
