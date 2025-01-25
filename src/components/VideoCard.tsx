@@ -1,4 +1,4 @@
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 
 interface VideoCardProps {
@@ -30,6 +30,7 @@ export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) =
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-4xl h-[80vh] p-0">
+          <DialogTitle className="sr-only">{title}</DialogTitle>
           {url && (
             <iframe
               src={url}
