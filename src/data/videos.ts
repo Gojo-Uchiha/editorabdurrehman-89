@@ -30,7 +30,7 @@ export const videos: Video[] = [
   },
   {
     id: "3",
-    title: "Anime Edit 3456",
+    title: "Anime Edit 3",
     category: "Anime Edits",
     url: "https://drive.google.com/file/d/16pBNw2_fZ3486JHJ_DKBKdwpBBGUGlBq/preview",
     thumbnail: getDriveThumbnail("https://drive.google.com/file/d/16pBNw2_fZ3486JHJ_DKBKdwpBBGUGlBq/preview")
