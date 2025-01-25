@@ -62,8 +62,8 @@ export const videos: Video[] = [
     id: "7",
     title: "Popular Edit 3",
     category: "Popular Edits",
-    url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view?usp=sharing",
-    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view?usp=sharing")
+    url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
+    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view")
   },
   {
     id: "21",
