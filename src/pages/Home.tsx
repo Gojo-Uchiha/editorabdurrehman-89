@@ -66,12 +66,22 @@ const Home = () => {
       </section>
 
       {/* Moving Consultancy Text */}
-      <div className="bg-primary/10 py-8 overflow-hidden whitespace-nowrap">
-        <div className="animate-marquee inline-block">
+      // In your Home component
+      <div className="marquee-container">
+        <div className="marquee-content">
           <span className="text-2xl font-medium mx-4">Need a consultation? </span>
-          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">Get in touch →</Link>
+          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">
+            Get in touch →
+          </Link>
           <span className="text-2xl font-medium mx-4">Let's create something amazing together </span>
-          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">Contact me →</Link>
+          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">
+            Contact me →
+          </Link>
+          {/* Duplicate content for seamless animation */}
+          <span className="text-2xl font-medium mx-4">Need a consultation? </span>
+          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">
+            Get in touch →
+          </Link>
         </div>
       </div>
 

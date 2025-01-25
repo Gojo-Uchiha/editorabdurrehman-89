@@ -83,25 +83,36 @@ body {
   padding: 0 20px;
 }
 
-/* Moving Consultancy Text Section */
-.moving-text {
-  background-color: rgba(59, 130, 246, 0.1);
-  padding: 2rem 0;
+/* App.css */
+/* ... (keep existing styles) */
+
+/* Improved Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-.moving-text .animate-marquee {
-  font-size: 1.5rem;
-  font-weight: 500;
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 1rem 0;
 }
 
-.moving-text a {
-  color: rgba(59, 130, 246, 1);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  padding-right: 100%; /* Ensure content stays in single line */
 }
 
-.moving-text a:hover {
-  color: rgba(59, 130, 246, 0.8);
+/* For continuous loop - duplicate content in JSX */
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
 /* Hero Section */
