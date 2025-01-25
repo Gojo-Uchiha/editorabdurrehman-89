@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="pt-16">
       <section className="relative h-[80vh] bg-gradient-to-b from-background to-background/50">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] bg-cover bg-center opacity-50" />
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/51fb5481-e197-44ef-b629-e82f8c5cddba.png')] bg-cover bg-center opacity-50" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6">Video Editing Portfolio</h1>
