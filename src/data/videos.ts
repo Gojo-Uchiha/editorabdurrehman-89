@@ -43,7 +43,14 @@ export const videos: Video[] = [
     thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1Czd84z1fyhG1nvjbgFOJRkGaQD34GHuc/preview")
   },
   
-  // Popular Edits
+ // Popular Edits
+{
+  id: "21",
+  title: "Popular Edit 4",
+  category: "Popular Edits",
+  url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
+  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview")
+},
 {
   id: "5",
   title: "Popular Edit 1",
@@ -64,13 +71,6 @@ export const videos: Video[] = [
   category: "Popular Edits",
   url: "https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview",
   thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview")
-},
-{
-  id: "21", // Using next available ID
-  title: "Popular Edit 4", // You can customize the title
-  category: "Popular Edits",
-  url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview",
-  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview")
 },
 
   // Intros
