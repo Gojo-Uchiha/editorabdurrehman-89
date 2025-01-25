@@ -40,3 +40,32 @@
 .read-the-docs {
   color: #888;
 }
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+/* Ensure the parent container hides overflow */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Optional: Add smooth transitions for hover effects */
+.transition-colors {
+  transition: color 0.3s ease;
+}
+
+.hover\:text-primary\/80:hover {
+  color: rgba(59, 130, 246, 0.8); /* Adjust the color to match your primary color */
+}
