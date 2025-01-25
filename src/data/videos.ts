@@ -44,34 +44,34 @@ export const videos: Video[] = [
   },
   
   // Popular Edits
-  {
-    id: "5",
-    title: "Popular Edit 1",
-    category: "Popular Edits",
-    url: "https://drive.google.com/file/d/1K9Qv00URH4kldH87jP4GL10YO6loOSjx/preview",
-    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1K9Qv00URH4kldH87jP4GL10YO6loOSjx/preview")
-  },
-  {
-    id: "6",
-    title: "Popular Edit 2",
-    category: "Popular Edits",
-    url: "https://drive.google.com/file/d/18cpAxEt3RZeI_htpeuhOqFHx0p0n3hU_/preview",
-    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/18cpAxEt3RZeI_htpeuhOqFHx0p0n3hU_/preview")
-  },
-  {
-    id: "7",
-    title: "Popular Edit 3",
-    category: "Popular Edits",
-    url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
-    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view")
-  },
-  {
-    id: "21",
-    title: "Popular Edit 4",
-    category: "Popular Edits",
-    url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
-    thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view")
-  },
+{
+  id: "5",
+  title: "Popular Edit 1",
+  category: "Popular Edits",
+  url: "https://drive.google.com/file/d/1K9Qv00URH4kldH87jP4GL10YO6loOSjx/preview",
+  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1K9Qv00URH4kldH87jP4GL10YO6loOSjx/preview")
+},
+{
+  id: "6",
+  title: "Popular Edit 2",
+  category: "Popular Edits",
+  url: "https://drive.google.com/file/d/18cpAxEt3RZeI_htpeuhOqFHx0p0n3hU_/preview",
+  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/18cpAxEt3RZeI_htpeuhOqFHx0p0n3hU_/preview")
+},
+{
+  id: "7",
+  title: "Popular Edit 3",
+  category: "Popular Edits",
+  url: "https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview",
+  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1XEltWOoJVLQAo_Wv6JSlKrGwP49bKfmV/preview")
+},
+{
+  id: "21", // Using next available ID
+  title: "Popular Edit 4", // You can customize the title
+  category: "Popular Edits",
+  url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview",
+  thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview")
+},
 
   // Intros
   {
