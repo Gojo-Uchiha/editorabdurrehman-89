@@ -1,6 +1,7 @@
 import { VideoCard } from "../components/VideoCard";
 import { videos } from "../data/videos";
 import { Star, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   Accordion,
   AccordionContent,
@@ -53,6 +54,7 @@ const Home = () => {
   
   return (
     <div className="pt-16">
+      {/* Hero Section */}
       <section className="relative h-[80vh] bg-gradient-to-b from-background to-background/50">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/51fb5481-e197-44ef-b629-e82f8c5cddba.png')] bg-cover bg-center opacity-50" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
@@ -63,30 +65,17 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 container mx-auto px-4">
-        {featuredCategories.map(category => {
-          const categoryVideos = videos.filter(video => video.category === category).slice(0, 3);
-          
-          return (
-            <div key={category} className="mb-16">
-              <h2 className="text-3xl font-semibold mb-8">{category}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {categoryVideos.map((video) => (
-                  <VideoCard
-                    key={video.id}
-                    title={video.title}
-                    thumbnail={video.thumbnail}
-                    category={video.category}
-                    url={video.url}
-                  />
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </section>
+      {/* Moving Consultancy Text */}
+      <div className="bg-primary/10 py-8 overflow-hidden whitespace-nowrap">
+        <div className="animate-marquee inline-block">
+          <span className="text-2xl font-medium mx-4">Need a consultation? </span>
+          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">Get in touch →</Link>
+          <span className="text-2xl font-medium mx-4">Let's create something amazing together </span>
+          <Link to="/contact" className="text-2xl font-medium text-primary mx-4 hover:text-primary/80 transition-colors">Contact me →</Link>
+        </div>
+      </div>
 
-      {/* Reviews Section */}
+      {/* Client Reviews Section */}
       <section className="container mx-auto px-4 py-20">
         <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
           <Star className="text-primary" />
@@ -111,6 +100,30 @@ const Home = () => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Featured Videos Sections */}
+      <section className="py-20 container mx-auto px-4">
+        {featuredCategories.map(category => {
+          const categoryVideos = videos.filter(video => video.category === category).slice(0, 3);
+          
+          return (
+            <div key={category} className="mb-16">
+              <h2 className="text-3xl font-semibold mb-8">{category}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {categoryVideos.map((video) => (
+                  <VideoCard
+                    key={video.id}
+                    title={video.title}
+                    thumbnail={video.thumbnail}
+                    category={video.category}
+                    url={video.url}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </section>
 
       {/* FAQ Section */}
