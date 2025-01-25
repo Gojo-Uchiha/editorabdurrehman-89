@@ -10,8 +10,8 @@ const Home = () => {
         <div className="absolute inset-0 bg-[url('/lovable-uploads/51fb5481-e197-44ef-b629-e82f8c5cddba.png')] bg-cover bg-center opacity-50" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold mb-6">Video Editing Portfolio</h1>
-            <p className="text-xl text-foreground/80 mb-8">Professional video editing and animation services</p>
+            <h1 className="text-5xl font-bold mb-6">Syed AbdurRehman</h1>
+            <p className="text-xl text-foreground/80 mb-8">Hey 👋 I'm a freelance video editor and content creator. I specialize in crafting polished YouTube videos, Shorts, and Reels that help creators stand out and connect with their audience. Let's bring your ideas to life!</p>
           </div>
         </div>
       </section>
