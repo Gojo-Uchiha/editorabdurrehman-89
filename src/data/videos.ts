@@ -48,7 +48,7 @@ export const videos: Video[] = [
   id: "21",
   title: "Popular Edit 4",
   category: "Popular Edits",
-  url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/view",
+  url: "https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview",
   thumbnail: getDriveThumbnail("https://drive.google.com/file/d/1B9GygcsRf3pm63vbuRPSNSZpTxnuV4lG/preview")
 },
 {
