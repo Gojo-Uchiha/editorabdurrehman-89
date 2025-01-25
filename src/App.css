@@ -40,6 +40,7 @@
 .read-the-docs {
   color: #888;
 }
+
 /* Marquee Animation */
 @keyframes marquee {
   0% {
@@ -56,16 +57,92 @@
   animation: marquee 20s linear infinite;
 }
 
-/* Ensure the parent container hides overflow */
 .overflow-hidden {
   overflow: hidden;
 }
 
-/* Optional: Add smooth transitions for hover effects */
 .transition-colors {
   transition: color 0.3s ease;
 }
 
 .hover\:text-primary\/80:hover {
-  color: rgba(59, 130, 246, 0.8); /* Adjust the color to match your primary color */
+  color: rgba(59, 130, 246, 0.8);
+}
+
+/* New Global Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Moving Consultancy Text Section */
+.moving-text {
+  background-color: rgba(59, 130, 246, 0.1);
+  padding: 2rem 0;
+}
+
+.moving-text .animate-marquee {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.moving-text a {
+  color: rgba(59, 130, 246, 1);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.moving-text a:hover {
+  color: rgba(59, 130, 246, 0.8);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: linear-gradient(to bottom, #1a1a1a, rgba(26, 26, 26, 0.5));
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+/* Client Reviews Section */
+.review-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-0.5rem);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1), 0 10px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* FAQ Section */
+.faq-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+/* About Me Section */
+.about-me {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
 }

@@ -151,6 +151,29 @@ const Home = () => {
           </Accordion>
         </div>
       </section>
+
+      {/* About Me Section */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold mb-8">About Me</h2>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="space-y-6">
+            <p className="text-gray-300">
+              With a passion for storytelling and an eye for detail, I help content creators and businesses bring their vision to life through compelling video content.
+            </p>
+            <p className="text-gray-300">
+              Whether you need anime edits, popular edits, intros, logo animations, headcam reels, or long-form content, 
+              I've got you covered with professional editing services that will make your content stand out.
+            </p>
+          </div>
+          <div className="space-y-6">
+            <div className="p-6 bg-white/5 rounded-lg backdrop-blur-sm shadow-lg shadow-primary/10">
+              <h3 className="text-xl font-medium mb-2">Contact Information</h3>
+              <p className="text-primary">Email: syed4abdurrehman@gmail.com</p>
+              <p className="text-primary">Phone: +923324112404</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
