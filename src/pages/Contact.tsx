@@ -3,6 +3,9 @@ import { toast } from "sonner";
 import { personalInfo } from "../data/videos";
 import emailjs from '@emailjs/browser';
 
+// Initialize EmailJS with your public key
+emailjs.init("YOUR_PUBLIC_KEY"); // Replace this with your actual public key
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,20 +18,20 @@ const Contact = () => {
     
     try {
       await emailjs.send(
-        'service_id', // Replace with your EmailJS service ID
-        'template_id', // Replace with your EmailJS template ID
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'syed4abdurrehman@gmail.com',
-        },
-        'public_key' // Replace with your EmailJS public key
+        }
       );
       
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast.error("Failed to send message. Please try again.");
     }
   };
