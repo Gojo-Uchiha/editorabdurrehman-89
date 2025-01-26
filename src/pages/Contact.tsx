@@ -4,7 +4,7 @@ import { personalInfo } from "../data/videos";
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
-emailjs.init("6WY7slgRhViddS8x6"); // Replace this with your actual public key
+emailjs.init("6WY7slgRhViddS8x6");
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,14 +12,23 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Prevent multiple rapid submissions
+    if (isSubmitting) {
+      toast.error("Please wait before sending another message.");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
     try {
       await emailjs.send(
-        'service_goyxqid', // Replace with your EmailJS service ID
-        'template_cd511sf', // Replace with your EmailJS template ID
+        'service_goyxqid',
+        'template_cd511sf',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -30,9 +39,20 @@ const Contact = () => {
       
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch (error: any) {
       console.error('EmailJS Error:', error);
-      toast.error("Failed to send message. Please try again.");
+      if (error?.status === 429) {
+        toast.error("Too many requests. Please try again in a moment.");
+      } else if (error?.status === 400) {
+        toast.error("Configuration error. Please try again later.");
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } finally {
+      // Allow new submissions after 5 seconds
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 5000);
     }
   };
 
@@ -77,6 +97,7 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -91,6 +112,7 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
@@ -104,14 +126,16 @@ const Contact = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground h-32"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/80 transition-colors"
+              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
