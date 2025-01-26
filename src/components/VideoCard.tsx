@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface VideoCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface VideoCardProps {
 
 export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -29,7 +31,7 @@ export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) =
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl h-[80vh] p-0">
+        <DialogContent className={`${isMobile ? 'mx-4 my-auto' : 'max-w-4xl'} h-[80vh] p-0`}>
           <DialogTitle className="sr-only">{title}</DialogTitle>
           {url && (
             <iframe
