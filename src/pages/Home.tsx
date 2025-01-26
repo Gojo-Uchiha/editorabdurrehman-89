@@ -55,9 +55,9 @@ const Home = () => {
   return (
     <div className="pt-16">
       <section className="relative h-[80vh] bg-gradient-to-b from-background to-background/50">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/72d8f939-a794-4158-a0dc-12da8c6a1c14.png')] bg-cover bg-center opacity-30" />
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/72d8f939-a794-4158-a0dc-12da8c6a1c14.png')] bg-cover bg-center opacity-20 bg-blend-overlay" />
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="max-w-3xl text-center">
             <h1 className="text-5xl font-bold mb-6">Syed AbdurRehman</h1>
             <p className="text-xl text-foreground/80 mb-8">Hey 👋 I'm a freelance video editor and content creator. I specialize in crafting polished YouTube videos, Shorts, and Reels that help creators stand out and connect with their audience. Let's bring your ideas to life!</p>
           </div>
