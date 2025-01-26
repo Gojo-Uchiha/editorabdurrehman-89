@@ -4,7 +4,7 @@ import { personalInfo } from "../data/videos";
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace this with your actual public key
+emailjs.init("6WY7slgRhViddS8x6"); // Replace this with your actual public key
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +18,8 @@ const Contact = () => {
     
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_goyxqid', // Replace with your EmailJS service ID
+        'template_cd511sf', // Replace with your EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
