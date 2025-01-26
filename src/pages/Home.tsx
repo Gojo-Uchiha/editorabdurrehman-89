@@ -1,6 +1,7 @@
 import { VideoCard } from "../components/VideoCard";
 import { videos } from "../data/videos";
 import { Star, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   Accordion,
   AccordionContent,
@@ -54,7 +55,7 @@ const Home = () => {
   return (
     <div className="pt-16">
       <section className="relative h-[80vh] bg-gradient-to-b from-background to-background/50">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/72d8f939-a794-4158-a0dc-12da8c6a1c14.png')] bg-cover bg-center opacity-50" />
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/72d8f939-a794-4158-a0dc-12da8c6a1c14.png')] bg-cover bg-center opacity-30" />
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6">Syed AbdurRehman</h1>
@@ -65,17 +66,11 @@ const Home = () => {
 
       {/* Moving Text Section */}
       <div className="relative overflow-hidden py-8 bg-primary/10 mb-12">
-        <div className="animate-scroll whitespace-nowrap inline-block">
-          <span className="text-2xl font-bold mx-4">✦ Available for Consultancy</span>
-          <span className="text-2xl font-bold mx-4">✦ Get in Touch</span>
+        <div className="animate-scroll whitespace-nowrap">
+          <Link to="/contact" className="text-2xl font-bold mx-4 hover:text-primary transition-colors">✦ Available for Consultancy</Link>
+          <Link to="/contact" className="text-2xl font-bold mx-4 hover:text-primary transition-colors">✦ Get in Touch</Link>
           <span className="text-2xl font-bold mx-4">✦ Professional Video Editing</span>
-          <span className="text-2xl font-bold mx-4">✦ Contact Now</span>
-        </div>
-        <div className="animate-scroll whitespace-nowrap inline-block">
-          <span className="text-2xl font-bold mx-4">✦ Available for Consultancy</span>
-          <span className="text-2xl font-bold mx-4">✦ Get in Touch</span>
-          <span className="text-2xl font-bold mx-4">✦ Professional Video Editing</span>
-          <span className="text-2xl font-bold mx-4">✦ Contact Now</span>
+          <Link to="/contact" className="text-2xl font-bold mx-4 hover:text-primary transition-colors">✦ Contact Now</Link>
         </div>
       </div>
 
