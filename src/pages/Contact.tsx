@@ -57,45 +57,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pb-20 container mx-auto px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-12">Get in Touch</h1>
-        
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
-            <p className="text-foreground/80 mb-6">
-              Let's create something amazing together. Reach out for collaborations,
-              inquiries, or just to say hello.
-            </p>
-            
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-primary font-semibold">Name</h3>
-                <p className="text-foreground/80">{personalInfo.name}</p>
-              </div>
-              <div>
-                <h3 className="text-primary font-semibold">Email</h3>
-                <p className="text-foreground/80">{personalInfo.email}</p>
-              </div>
-              <div>
-                <h3 className="text-primary font-semibold">Phone</h3>
-                <p className="text-foreground/80">{personalInfo.phone}</p>
-              </div>
-            </div>
-          </div>
-
+    <div className="pt-24 pb-20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8 glow-text text-center">Get in Touch</h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name
               </label>
               <input
-                type="text"
                 id="name"
+                type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground"
+                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground glow-border"
                 required
                 disabled={isSubmitting}
               />
@@ -106,11 +82,11 @@ const Contact = () => {
                 Email
               </label>
               <input
-                type="email"
                 id="email"
+                type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground"
+                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground glow-border"
                 required
                 disabled={isSubmitting}
               />
@@ -124,7 +100,7 @@ const Contact = () => {
                 id="message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground h-32"
+                className="w-full px-4 py-2 rounded-lg bg-secondary text-foreground h-32 glow-border"
                 required
                 disabled={isSubmitting}
               />
@@ -132,7 +108,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed glow-hover"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}

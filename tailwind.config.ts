@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			boxShadow: {
+				'glow-primary': '0 0 20px rgba(var(--primary-rgb), 0.35)',
+				'glow-sm': '0 0 15px rgba(var(--primary-rgb), 0.25)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
