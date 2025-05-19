@@ -21,7 +21,7 @@ const Gallery = () => {
       const aIsPortrait = a.isPortrait === true;
       const bIsPortrait = b.isPortrait === true;
       
-      // Put portrait videos first
+      // Put portrait videos first (higher priority)
       return aIsPortrait === bIsPortrait ? 0 : aIsPortrait ? -1 : 1;
     });
     

@@ -35,7 +35,7 @@ export const VideoCard = ({ title, thumbnail, category, url, isPortrait: initial
         className={`video-card ${isPortrait ? 'portrait-video' : 'landscape-video'}`} 
         onClick={() => url && setIsOpen(true)}
       >
-        <div className={`${isPortrait ? 'portrait-container' : ''} rounded-lg overflow-hidden`}>
+        <div className={`${isPortrait ? 'portrait-container' : ''} rounded-lg overflow-hidden relative`}>
           <AspectRatio ratio={isPortrait ? 9/16 : 16/9}>
             <img 
               src={thumbnail} 
@@ -45,7 +45,7 @@ export const VideoCard = ({ title, thumbnail, category, url, isPortrait: initial
           </AspectRatio>
           <div className="video-info">
             <h3 className="text-lg font-semibold">{title}</h3>
-            <p className="text-sm text-primary">{category}</p>
+            <p className="text-sm">{category}</p>
           </div>
         </div>
       </div>

@@ -70,12 +70,15 @@
 
 .portrait-container {
   @apply w-3/5 mx-auto; /* Make portrait videos narrower */
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3); /* Enhanced glow for vertical videos */
+  border-radius: 1rem; /* Slightly more rounded corners for portrait */
 }
 
 /* Landscape Video Styles */
 .landscape-video {
   @apply w-full;
   grid-column: span 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 1024px) {
@@ -90,6 +93,13 @@
   box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.25);
 }
 
+/* Enhanced hover effect for portrait videos */
+.portrait-video:hover .portrait-container {
+  box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.5);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
 .video-info {
   @apply absolute bottom-0 left-0 right-0 p-4 text-white z-10 opacity-0 transition-opacity 
   duration-300 bg-gradient-to-t from-black/80 to-transparent;
@@ -98,6 +108,17 @@
 
 .video-card:hover .video-info {
   @apply opacity-100;
+}
+
+/* Title and category styling for vertical videos */
+.portrait-video .video-info h3 {
+  @apply text-lg font-bold mb-1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portrait-video .video-info p {
+  @apply text-primary;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Glow Effects */
