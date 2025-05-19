@@ -59,7 +59,7 @@
 .video-card {
   @apply relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300;
   transform: translateZ(0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Removed the box-shadow from here to prevent double shadows */
 }
 
 /* Portrait/Vertical Video Styles */
@@ -70,7 +70,7 @@
 
 .portrait-container {
   @apply w-3/5 mx-auto; /* Make portrait videos narrower */
-  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3); /* Enhanced glow for vertical videos */
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3); /* Keep only this shadow for vertical videos */
   border-radius: 1rem; /* Slightly more rounded corners for portrait */
 }
 
@@ -78,7 +78,7 @@
 .landscape-video {
   @apply w-full;
   grid-column: span 1;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Keep shadow for landscape videos */
 }
 
 @media (min-width: 1024px) {
@@ -90,7 +90,7 @@
 /* Hover/Animation Effects */
 .video-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.25);
+  /* Removed box-shadow here to prevent double shadows on hover */
 }
 
 /* Enhanced hover effect for portrait videos */
