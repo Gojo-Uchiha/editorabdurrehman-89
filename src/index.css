@@ -35,33 +35,69 @@
   }
 }
 
-.video-card {
-  @apply relative overflow-hidden rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-glow-sm;
+/* Video Grid Layout */
+.video-grid {
+  @apply grid gap-6;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
+/* Media query for larger screens to control column count */
+@media (min-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr); /* Default: 2 columns for landscape */
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for portrait on larger screens */
+  }
+}
+
+/* Card Styles */
+.video-card {
+  @apply relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300;
+  transform: translateZ(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Portrait/Vertical Video Styles */
 .portrait-video {
   @apply flex justify-center;
+  grid-column: span 1; /* Each portrait video takes 1 column */
 }
 
 .portrait-container {
-  @apply w-3/5 mx-auto; /* This makes portrait videos narrower and more vertical */
+  @apply w-3/5 mx-auto; /* Make portrait videos narrower */
 }
 
+/* Landscape Video Styles */
 .landscape-video {
   @apply w-full;
+  grid-column: span 1;
 }
 
-.video-card::after {
-  content: '';
-  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300;
+@media (min-width: 1024px) {
+  .landscape-video {
+    grid-column: span 2; /* Each landscape video takes 2 columns on large screens */
+  }
 }
 
-.video-card:hover::after {
+/* Hover/Animation Effects */
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.25);
+}
+
+.video-info {
+  @apply absolute bottom-0 left-0 right-0 p-4 text-white z-10 opacity-0 transition-opacity 
+  duration-300 bg-gradient-to-t from-black/80 to-transparent;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-info {
   @apply opacity-100;
-}
-
-.video-grid {
-  @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
 }
 
 /* Glow Effects */

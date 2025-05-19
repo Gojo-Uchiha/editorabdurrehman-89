@@ -1,16 +1,33 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VideoCard } from "../components/VideoCard";
 import { videos } from "../data/videos";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [sortedVideos, setSortedVideos] = useState(videos);
   
   const categories = ["all", ...Array.from(new Set(videos.map(video => video.category)))];
 
-  const filteredVideos = activeCategory === "all" 
-    ? videos 
-    : videos.filter(video => video.category === activeCategory);
+  // Sort and filter videos when category changes
+  useEffect(() => {
+    const filtered = activeCategory === "all" 
+      ? [...videos] 
+      : videos.filter(video => video.category === activeCategory);
+    
+    // Sort videos to prioritize vertical (portrait) videos
+    const sorted = [...filtered].sort((a, b) => {
+      // Check if thumbnail aspect ratio is available in the data
+      // If not available, we'll handle this in the VideoCard component
+      const aIsPortrait = a.isPortrait === true;
+      const bIsPortrait = b.isPortrait === true;
+      
+      // Put portrait videos first
+      return aIsPortrait === bIsPortrait ? 0 : aIsPortrait ? -1 : 1;
+    });
+    
+    setSortedVideos(sorted);
+  }, [activeCategory]);
 
   return (
     <div className="pt-24 pb-20 container mx-auto px-4">
@@ -32,14 +49,15 @@ const Gallery = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredVideos.map((video) => (
+      <div className="video-grid">
+        {sortedVideos.map((video) => (
           <VideoCard
             key={video.id}
             title={video.title}
             thumbnail={video.thumbnail}
             category={video.category}
             url={video.url}
+            isPortrait={video.isPortrait}
           />
         ))}
       </div>

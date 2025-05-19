@@ -9,30 +9,33 @@ interface VideoCardProps {
   thumbnail: string;
   category: string;
   url?: string;
+  isPortrait?: boolean;
 }
 
-export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) => {
+export const VideoCard = ({ title, thumbnail, category, url, isPortrait: initialIsPortrait }: VideoCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPortrait, setIsPortrait] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(initialIsPortrait ?? false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Check if the thumbnail is portrait (9:16) or landscape
-    const img = new Image();
-    img.onload = () => {
-      const aspectRatio = img.width / img.height;
-      setIsPortrait(aspectRatio < 0.8); // If aspect ratio is less than 0.8, consider it portrait (9:16)
-    };
-    img.src = thumbnail;
-  }, [thumbnail]);
+    // If isPortrait is not provided as a prop, detect it from the thumbnail
+    if (initialIsPortrait === undefined) {
+      const img = new Image();
+      img.onload = () => {
+        const aspectRatio = img.width / img.height;
+        setIsPortrait(aspectRatio < 0.8); // If aspect ratio is less than 0.8, consider it portrait (9:16)
+      };
+      img.src = thumbnail;
+    }
+  }, [thumbnail, initialIsPortrait]);
 
   return (
     <>
       <div 
-        className={`video-card group relative cursor-pointer ${isPortrait ? 'portrait-video' : 'landscape-video'}`} 
+        className={`video-card ${isPortrait ? 'portrait-video' : 'landscape-video'}`} 
         onClick={() => url && setIsOpen(true)}
       >
-        <div className={`relative ${isPortrait ? 'portrait-container' : ''} rounded-lg overflow-hidden`}>
+        <div className={`${isPortrait ? 'portrait-container' : ''} rounded-lg overflow-hidden`}>
           <AspectRatio ratio={isPortrait ? 9/16 : 16/9}>
             <img 
               src={thumbnail} 
@@ -40,7 +43,7 @@ export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) =
               className="w-full h-full object-cover"
             />
           </AspectRatio>
-          <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 rounded-b-lg">
+          <div className="video-info">
             <h3 className="text-lg font-semibold">{title}</h3>
             <p className="text-sm text-primary">{category}</p>
           </div>
