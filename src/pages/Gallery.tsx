@@ -18,7 +18,6 @@ const Gallery = () => {
     // Sort videos to prioritize vertical (portrait) videos
     const sorted = [...filtered].sort((a, b) => {
       // Check if thumbnail aspect ratio is available in the data
-      // If not available, we'll handle this in the VideoCard component
       const aIsPortrait = a.isPortrait === true;
       const bIsPortrait = b.isPortrait === true;
       

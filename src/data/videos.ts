@@ -1,9 +1,11 @@
+
 export interface Video {
   id: string;
   title: string;
   category: string;
   url: string;
   thumbnail: string;
+  isPortrait?: boolean; // Added this property with optional flag
 }
 
 // Utility function to extract thumbnail from Drive URL
