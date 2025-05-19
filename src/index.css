@@ -40,7 +40,11 @@
 }
 
 .portrait-video {
-  @apply w-full;
+  @apply flex justify-center;
+}
+
+.portrait-container {
+  @apply w-3/5 mx-auto; /* This makes portrait videos narrower and more vertical */
 }
 
 .landscape-video {

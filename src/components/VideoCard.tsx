@@ -32,7 +32,7 @@ export const VideoCard = ({ title, thumbnail, category, url }: VideoCardProps) =
         className={`video-card group relative cursor-pointer ${isPortrait ? 'portrait-video' : 'landscape-video'}`} 
         onClick={() => url && setIsOpen(true)}
       >
-        <div className={`relative ${isPortrait ? 'h-96' : 'h-64'} overflow-hidden rounded-lg`}>
+        <div className={`relative ${isPortrait ? 'portrait-container' : ''} rounded-lg overflow-hidden`}>
           <AspectRatio ratio={isPortrait ? 9/16 : 16/9}>
             <img 
               src={thumbnail} 
